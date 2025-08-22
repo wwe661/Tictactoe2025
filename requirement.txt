@@ -1,0 +1,11 @@
+pip install fastapi
+pip install uvicorn
+
+npm install 
+npm run dev
+
+// in sperate Terminal 
+
+uvicorn src.backend.main:app --reload
+
+Note: you must be under the directory ../React-app/
