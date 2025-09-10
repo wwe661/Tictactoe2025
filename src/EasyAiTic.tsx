@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 // import "./TicTacToe.css";
 import "./EasyTic.css";
+import { useNavigate } from "react-router-dom";
 
 const posToLetter = ["a", "d", "g", "b", "e", "h", "c", "f", "i"];
 const letterToIndex: Record<string, number> = {
@@ -20,6 +21,7 @@ const EasyAiTic: React.FC = () => {
   const [aiFirst, setAiFirst] = useState(false);
     const [player1Score, setPlayer1Score] = useState<number>(0);
     const [player2Score, setPlayer2Score] = useState<number>(0);
+    const navigate = useNavigate();
 
   const calculateWinner = (squares: (string | null)[]) => {
     const lines = [
@@ -147,21 +149,19 @@ const EasyAiTic: React.FC = () => {
       <div className="navbar">
         <div className="logo">Tic Tac Toe</div>
         <div className="nav-links">
-          <button>Docs</button>
-          <button>Play</button>
-          <button>About Us</button>
+          <button onClick={() => navigate("/")}>Home</button>
+          <button onClick={() => navigate("/mode")}>Mode</button>
+          {/* <button>About Us</button> */}
         </div>
       </div>
 
     <div className="tictactoe-container">
       {/* Header */}
-        {/* <div className="tictactoe-header">
+        <div className="tictactoe-header">
           <h1>
-            THE 
-            TIC-TAC-TOE 
-            GAME
+            Where X and O Settle Their Eternal Rivalry…
           </h1>
-        </div> */}
+        </div>
         {/* Game layout */}
         <div className="game-layout">
           {/* Player 1 Score */}
@@ -202,8 +202,8 @@ const EasyAiTic: React.FC = () => {
 <button className="reset" onClick={resetGame}>
         ⟳
       </button>
-      <button className="reset" onClick={play(0)}>Ai[O]<span className="toggle">AI First</span> </button>
-      <button className="reset" onClick={play(1)}>P[X]<span className="toggle">Player First</span> </button>
+      <button className="reset" onClick={play(0)}>Ai<span className="toggle">AI First</span> </button>
+      <button className="reset" onClick={play(1)}>Player<span className="toggle">Player First</span> </button>
       <button className="reset" onClick={play(2)}>O/X<span className="toggle"> Random</span></button>
       </div>
       
