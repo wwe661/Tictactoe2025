@@ -1,0 +1,97 @@
+/* Container for the entire page */
+.homepage-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, #f47e27 50%, #942017 50%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  color: #4a0101;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #f47e27;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 4px 4px 10px #7d150f;
+}
+
+.nav-btn {
+  background-color: #942017;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #7d150f;
+}
+
+/* Wrapper between left and right section */
+.content-wrapper {
+  display: flex;
+  flex-grow: 1;
+  padding: 50px 80px;
+}
+
+/* Left panel with Title */
+.left-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 900;
+  user-select: none;
+}
+
+.highlight-white {
+  color: white;
+  letter-spacing: 3px;
+}
+
+.highlight-dark {
+  color: #4a0101;
+  letter-spacing: 3px;
+}
+
+/* Right panel with buttons */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.mode-btn {
+  background-color: #942017;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 18px 36px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px #701211;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 220px;
+  text-align: center;
+}
+
+.mode-btn:hover {
+  background-color: #7d150f;
+  transform: scale(1.05);
+}
