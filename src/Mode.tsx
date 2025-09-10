@@ -1,9 +1,9 @@
 import React from "react";
-import "./HomePage.css";
+import "./Mode.css";
 import { useNavigate } from "react-router-dom";
 
 
-const HomePage: React.FC = () => {
+const Mode: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="homepage-container">
@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
       <div className="content-wrapper">
         <div className="left-panel">
           <h1 className="title">
-            <span className="highlight-white">THE</span><br />
+            <span className="highlight-white">TIC-</span><br />
             <span className="highlight-white">TIC-</span><br />
             <span className="highlight-white">TAC-</span><br />
             <span className="highlight-white">TOE</span><br />
@@ -35,19 +35,19 @@ const HomePage: React.FC = () => {
         <div className="center-gradient"></div>
 
         <div className="right-panel">
-          <button className="mode-btn" onClick={() => navigate("/mode")}>
-            Let's Start →
+          <button className="mode-btn" onClick={() => navigate("/easy")}>
+            Player vs AI (Easy)
           </button>
-          {/* <button className="mode-btn" onClick={() => navigate("/hard")}>
+          <button className="mode-btn" onClick={() => navigate("/hard")}>
             Player vs AI (Hard)
           </button>
           <button className="mode-btn" onClick={() => navigate("/pvp")}>
             Player vs Player
-          </button> */}
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default Mode;
