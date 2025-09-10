@@ -1,7 +1,7 @@
 // src/App.js
 import AI_TTT from './Hard_TTT';
 import React from 'react';
-import TicTacToe from './TicTacToe';
+import TicTacToe from './Hard_TTT';
 import EasyAiTic from './EasyAiTic';
 import EasyTic from './EasyTic';
 import HomePage from './HomePage';
@@ -11,7 +11,8 @@ function App() {
       {/* <h1>Tic Tac Toe</h1> */}
       {/* <TicTacToe /> */}
       {/* <AI_TTT /> */}
-      <EasyAiTic />
+      {/* <EasyAiTic /> */}
+      <TicTacToe/>
       {/* <EasyTic />  */}
       {/* <HomePage /> */}
     </div>

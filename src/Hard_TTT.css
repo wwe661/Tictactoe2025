@@ -5,7 +5,9 @@
   justify-content: center;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  /* background: linear-gradient(135deg, #6e8efb, #a777e3);
+   */
+   background: linear-gradient(90deg, #F15B2A 40%, #AF3F21 60%);
   color: #333;
   padding: 20px;
 }
@@ -33,6 +35,7 @@ h1 {
 .start-buttons {
   display: flex;
   gap: 20px;
+
 }
 
 .start-btn {
@@ -71,10 +74,10 @@ h1 {
 .board {
   display: flex;
   flex-direction: column;
-  border: 4px solid #2c3e50;
+  border: 14px solid #C69371;
   border-radius: 10px;
   background-color: #34495e;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 10px 20px #C69371; */
   margin-bottom: 20px;
 }
 
@@ -86,7 +89,7 @@ h1 {
   width: 80px;
   height: 80px;
   background: #ecf0f1;
-  border: 2px solid #2c3e50;
+  border: 12px solid #C69371;
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -121,6 +124,9 @@ h1 {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  background-color: gray;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .best-move {
@@ -131,7 +137,11 @@ h1 {
 .control-btn {
   padding: 10px 15px;
   font-size: 1rem;
-  background-color: #95a5a6;
+  /* background-color: #95a5a6;
+   */
+  background-color: #F15B2A;
+  box-shadow: 1px 1px 1px black;
+  border:1px solid black;
   color: white;
   border: none;
   border-radius: 5px;
@@ -140,7 +150,7 @@ h1 {
 }
 
 .control-btn.active, .control-btn:hover {
-  background-color: #7f8c8d;
+  scale: 105%;
 }
 
 .payoff-table {

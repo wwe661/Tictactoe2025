@@ -379,14 +379,14 @@ const TicTacToe = () => {
           </div>
 
           <div className="controls">
-            <button className="control-btn" onClick={resetGame}>New Game</button>
+            <button className="control-btn " onClick={resetGame}>New Game</button>
             <button className={`control-btn ${showPayoff ? 'active' : ''}`} onClick={() => setShowPayoff(!showPayoff)}>
               {showPayoff ? 'Hide' : 'Show'} Payoff Table
             </button>
           </div>
 
           {isPlayerTurn && bestSuggestedMove !== null && (
-            <div className="suggestion">
+            <div className="suggestion" style={{color:'white'}}>
               Suggested move (guaranteed non-loss if possible): <strong>Cell {cellLabel(bestSuggestedMove)}</strong>
             </div>
           )}
