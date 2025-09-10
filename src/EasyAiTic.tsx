@@ -1,6 +1,7 @@
 // src/AiTic.tsx
 import React, { useEffect, useState } from "react";
-import "./TicTacToe.css";
+// import "./TicTacToe.css";
+import "./EasyTic.css";
 
 const posToLetter = ["a", "d", "g", "b", "e", "h", "c", "f", "i"];
 const letterToIndex: Record<string, number> = {
@@ -17,6 +18,8 @@ const EasyAiTic: React.FC = () => {
   const [aiSymbol, setAiSymbol] = useState<"X" | "O" | null>(null);
   const [lastStats, setLastStats] = useState<any>(null);
   const [aiFirst, setAiFirst] = useState(false);
+    const [player1Score, setPlayer1Score] = useState<number>(0);
+    const [player2Score, setPlayer2Score] = useState<number>(0);
 
   const calculateWinner = (squares: (string | null)[]) => {
     const lines = [
@@ -104,7 +107,7 @@ const EasyAiTic: React.FC = () => {
   };
 
   const renderSquare = (index: number) => (
-    <button className="square" onClick={() => handleClick(index)}>
+    <button  onClick={() => handleClick(index)}>
       {board[index]}
     </button>
   );
@@ -139,45 +142,90 @@ const EasyAiTic: React.FC = () => {
   }, [aiFirst]);
   
   return (
-    <div className="game">
-      <div className="status">
+    <>
+    {/* Navbar outside game container */}
+      <div className="navbar">
+        <div className="logo">Tic Tac Toe</div>
+        <div className="nav-links">
+          <button>Docs</button>
+          <button>Play</button>
+          <button>About Us</button>
+        </div>
+      </div>
+
+    <div className="tictactoe-container">
+      {/* Header */}
+        {/* <div className="tictactoe-header">
+          <h1>
+            THE 
+            TIC-TAC-TOE 
+            GAME
+          </h1>
+        </div> */}
+        {/* Game layout */}
+        <div className="game-layout">
+          {/* Player 1 Score */}
+          {/* <div className="score-board">
+            <div>Player 1</div>
+            <div>Score</div>
+            <div className="score-value">{player1Score}</div>
+          </div> */}
+      
+      {/* Game Board */}
+          <div className="game-board">
+            
+            <div>
+            <div className="status">
         {winner
           ? `Winner: ${winner}`
-          : `Next: ${playerSymbol ? "Playing..." : "Choose O/X/Random to start"}`}
+          : `Next: ${playerSymbol ? "Playing..." : "Choose O/X"}`}
       </div>
-      <div className="board">
-        <div className="board-row">
+      <div className="board-grid">
+      {/* <div className="board"> */}
+        {/* <div className="board-row"> */}
           {renderSquare(0)}
           {renderSquare(1)}
           {renderSquare(2)}
-        </div>
-        <div className="board-row">
+        {/* </div> */}
+        {/* <div className="board-row"> */}
           {renderSquare(3)}
           {renderSquare(4)}
           {renderSquare(5)}
-        </div>
-        <div className="board-row">
+        {/* </div> */}
+        {/* <div className="board-row"> */}
           {renderSquare(6)}
-          {renderSquare(7)}
+          {renderSquare(7)}   
           {renderSquare(8)}
-        </div>
-      </div>
-      <button className="reset" onClick={resetGame}>
-        Reset Game
+        {/* </div> */}
+      </div></div>
+<div className="actions">
+<button className="reset" onClick={resetGame}>
+        ⟳
       </button>
-      <button className="reset" onClick={play(0)}>O (AI First)</button>
-      <button className="reset" onClick={play(1)}>X (Player First)</button>
-      <button className="reset" onClick={play(2)}>O/X Random</button>
-
-      {lastStats && (
+      <button className="reset" onClick={play(0)}>Ai[O]<span className="toggle">AI First</span> </button>
+      <button className="reset" onClick={play(1)}>P[X]<span className="toggle">Player First</span> </button>
+      <button className="reset" onClick={play(2)}>O/X<span className="toggle"> Random</span></button>
+      </div>
+      
+      {/* {lastStats && (
         <div className="stats">
           <h4>AI Move Stats</h4>
           <p>Win Rate: {(lastStats.win_rate * 100).toFixed(1)}%</p>
           <p>Draw Rate: {(lastStats.draw_rate * 100).toFixed(1)}%</p>
           <p>Loss Rate: {(lastStats.loss_rate * 100).toFixed(1)}%</p>
         </div>
-      )}
-    </div>
+      )} */}
+      </div>
+      {/* Player 2 Score */}
+          {/* <div className="score-board-2">
+            <div>Player 2</div>
+            <div>Score</div>
+            <div className="score-value">{player2Score}</div>
+          </div> */}
+
+        </div>
+        </div>
+    </>
   );
 };
 

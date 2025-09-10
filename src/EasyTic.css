@@ -1,0 +1,237 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #F15B2A 40%, #AF3F21 60%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  
+}
+body {
+  background: linear-gradient(90deg, #F15B2A 40%, #AF3F21 60%); /* CHANGED: apply gradient to whole page */
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+
+.navbar .logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 30px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .nav-links button {
+  background-color: #F15B2A; /* orange button */
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-right: 30px;
+}
+
+.navbar .nav-links button:hover {
+  transform: scale(1.05);
+}
+
+
+ .tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 3rem 2rem 2rem 2rem; /* top padding increased for navbar */
+  font-family: Arial, sans-serif;
+  user-select: none;
+  background: linear-gradient(90deg, #F15B2A 40%, #AF3F21 60%);
+  color: white;
+}
+
+
+/* Top center text */
+.tictactoe-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.tictactoe-header h1 {
+  font-weight: 900;
+  
+}
+
+/* Scores */
+.score-board {
+  /* background-color: #F15B2A; */
+  background-color: #AF3F21;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.score-board .score-value {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Scores 2*/
+.score-board-2 {
+  background-color: #F15B2A;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.score-board-2 .score-value {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Game layout */
+.game-layout {
+  display: flex;
+  justify-content: center; /* center the layout horizontally */
+  align-items: center;     /* vertically center scoreboards and board */
+  gap: 2rem;               /* space between left scoreboard, board, right scoreboard */
+  width: auto;             /* shrink layout to content width */
+}
+
+
+/* Game board */
+.game-board {
+  background-color: #AF3F21;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons button {
+  background-color: #F15B2A;
+  border: none;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Tic-tac-toe grid */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 10px;
+  background-color: #C69371;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.board-grid button {
+  background-color: #AF3F21;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* New Game button */
+.new-game-btn {
+  margin-top: 1rem;
+  background-color: #F15B2A;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Winner display */
+.winner-text {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+
+.actions {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding:5px;
+  background-color: #C69371;
+}
+
+.actions button {
+  background-color: #F15B2A; /* orange button */
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 70px;
+  margin: 5px;
+}
+
+.actions button:hover {
+  transform: scale(1.05);
+}
+
+.toggle{
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.actions button:hover .toggle{
+  display:block;
+}
+
+
