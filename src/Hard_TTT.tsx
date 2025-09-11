@@ -14,11 +14,11 @@ const TicTacToe = () => {
   // ---------- calculate Winner ----------
   const calculateWinner = (squares) => {
     const lines = [
-      [0,1,2],[3,4,5],[6,7,8],
-      [0,3,6],[1,4,7],[2,5,8],
-      [0,4,8],[2,4,6]
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
     ];
-    for (let [a,b,c] of lines) {
+    for (let [a, b, c] of lines) {
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
       }
@@ -137,11 +137,11 @@ const TicTacToe = () => {
 
   // ---------- Best player move (guaranteed non-loss when possible) ----------
   const getBestPlayerMove = () => {
-    const avail = board.map((v,i) => (v === null ? i : null)).filter(i => i !== null);
+    const avail = board.map((v, i) => (v === null ? i : null)).filter(i => i !== null);
     if (avail.length === 0) return null;
 
     // preference order for tie-breaking: center, corners, edges
-    const preferOrder = [4,0,2,6,8,1,3,5,7];
+    const preferOrder = [4, 0, 2, 6, 8, 1, 3, 5, 7];
 
     let candidates = [];
     for (const move of avail) {
@@ -163,7 +163,7 @@ const TicTacToe = () => {
     const pickFrom = (safe.length > 0) ? safe : candidates; // prefer safe moves, otherwise best available
 
     // Choose the move with highest score; if tie, choose by preferOrder
-    pickFrom.sort((a,b) => {
+    pickFrom.sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       return preferOrder.indexOf(a.move) - preferOrder.indexOf(b.move);
     });
@@ -318,11 +318,12 @@ const TicTacToe = () => {
         <p className="payoff-instruction">Suggested move guarantees no loss when possible. Values are normalized [-1..1].</p>
         <table className="payoff-grid">
           <tbody>
-            {[0,1,2].map(r => (
+            {[0, 1, 2].map(r => (
               <React.Fragment key={r}>
                 <tr>
-                  {[0,1,2].map(c => {
-                    const idx = r * 3 + c;
+                  {[0, 1, 2].map(c => {
+                    // flip row/col indexing
+                    const idx = c * 3 + r;
                     const p = payoffs[idx];
                     return (
                       <td key={c} className="payoff-cell">
@@ -336,10 +337,17 @@ const TicTacToe = () => {
                     );
                   })}
                 </tr>
-                {r < 2 && <tr><td colSpan={3}><div className="grid-divider"></div></td></tr>}
+                {r < 2 && (
+                  <tr>
+                    <td colSpan={3}>
+                      <div className="grid-divider"></div>
+                    </td>
+                  </tr>
+                )}
               </React.Fragment>
             ))}
           </tbody>
+
         </table>
         <div className="payoff-legend">
           <div className="legend-item"><span className="legend-color win"></span><span>1.0 = Win</span></div>
@@ -386,7 +394,7 @@ const TicTacToe = () => {
           </div>
 
           {isPlayerTurn && bestSuggestedMove !== null && (
-            <div className="suggestion" style={{color:'white'}}>
+            <div className="suggestion" style={{ color: 'white' }}>
               Suggested move (guaranteed non-loss if possible): <strong>Cell {cellLabel(bestSuggestedMove)}</strong>
             </div>
           )}
