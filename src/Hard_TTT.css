@@ -49,18 +49,19 @@ h1 {
 }
 
 .player-first {
-  background-color: #2ecc71;
+  background-color: #F15B2A;
   color: white;
 }
 
 .ai-first {
-  background-color: #3498db;
+  background-color: #F15B2A;
   color: white;
 }
 
 .start-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #F15B2Aee;
 }
 
 .status {
@@ -69,6 +70,7 @@ h1 {
   font-weight: bold;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: #F15B2Aee;
 }
 
 .board {
@@ -76,13 +78,14 @@ h1 {
   flex-direction: column;
   border: 14px solid #C69371;
   border-radius: 10px;
-  background-color: #34495e;
+  background-color: #C69371;
   /* box-shadow: 0 10px 20px #C69371; */
   margin-bottom: 20px;
 }
 
 .board-row {
   display: flex;
+  flex-direction: column;
 }
 
 .square {
