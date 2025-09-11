@@ -24,7 +24,7 @@ const Mode: React.FC = () => {
       <div className="content-wrapper">
         <div className="left-panel">
           <h1 className="title">
-            <span className="highlight-white">TIC-</span><br />
+            <span className="highlight-white">THE</span><br />
             <span className="highlight-white">TIC-</span><br />
             <span className="highlight-white">TAC-</span><br />
             <span className="highlight-white">TOE</span><br />
